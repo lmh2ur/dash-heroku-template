@@ -11,15 +11,9 @@ from dash import html
 from dash.dependencies import Input, Output
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-
-# In[2]:
-
-
-get_ipython().run_cell_magic('capture', '', 'gss = pd.read_csv("https://github.com/jkropko/DS-6001/raw/master/localdata/gss2018.csv",\n                 encoding=\'cp1252\', na_values=[\'IAP\',\'IAP,DK,NA,uncodeable\', \'NOT SURE\',\n                                               \'DK\', \'IAP, DK, NA, uncodeable\', \'.a\', "CAN\'T CHOOSE"])')
-
-
-# In[3]:
-
+gss = pd.read_csv("https://github.com/jkropko/DS-6001/raw/master/localdata/gss2018.csv",
+                 encoding='cp1252', na_values=['IAP','IAP,DK,NA,uncodeable', 'NOT SURE',
+                                               'DK', 'IAP, DK, NA, uncodeable', '.a', "CAN'T CHOOSE"])
 
 mycols = ['id', 'wtss', 'sex', 'educ', 'region', 'age', 'coninc',
           'prestg10', 'mapres10', 'papres10', 'sei10', 'satjob',
@@ -172,5 +166,3 @@ def barchart(question, group):
         
 if __name__ == '__main__':
     app.run_server(debug=True, port=8052)
-
-
