@@ -165,4 +165,4 @@ def barchart(question, group):
     return bar
         
 if __name__ == '__main__':
-    app.run_server(debug=True, use_reloader=False, port=8050)
+    app.run_server(debug=True)
